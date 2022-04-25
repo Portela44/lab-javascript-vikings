@@ -1,5 +1,13 @@
 // Soldier
-class Soldier {}
+class Soldier {
+  constructor(health, strength) {}
+  attack() {
+    return this.strength;
+  }
+  receiveDamage(damage) {
+    health = health - damage;
+  }
+}
 
 // Viking
 class Viking {}
