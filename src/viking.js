@@ -83,18 +83,20 @@ class War {
     if(randomAttack === 0) {
       const vikingIndex = Math.floor(Math.random()*this.vikingArmy.length);
       const saxonIndex = Math.floor(Math.random()*this.saxonArmy.length);
-      const result = this.vikingArmy[this.vikingIndex].receiveDamage(this.saxonArmy[this.saxonIndex].strength);
-      if(this.vikingArmy[this.vikingIndex].health <= 0) {
-        this.vikingArmy.splice(this.vikingIndex,1);
-      }
+      const result = this.vikingArmy[vikingIndex].receiveDamage(this.saxonArmy[saxonIndex].strength);
+      if(this.vikingArmy[vikingIndex].health <= 0) {
+        this.vikingArmy.splice(vikingIndex,1);
+      } 
+      return result;
     } else if(randomAttack === 1) {
       const vikingIndex = Math.floor(Math.random()*this.vikingArmy.length); 
       const saxonIndex = Math.floor(Math.random()*this.saxonArmy.length);
-      const result = this.saxonArmy[this.saxonIndex].receiveDamage(this.vikingArmy[this.vikingIndex].strength);
-      if(this.saxonArmy[this.saxonIndex].health <= 0) {
+      const result = this.saxonArmy[saxonIndex].receiveDamage(this.vikingArmy[vikingIndex].strength);
+      if(this.saxonArmy[saxonIndex].health <= 0) {
         this.saxonArmy.splice(saxonIndex,1);
-      }
-    } return result;
+      } 
+      return result;
+    }
   } 
 
   showStatus() {
